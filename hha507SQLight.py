@@ -31,7 +31,7 @@ print(result_df2.count())
 #Calculates Overall Average percentage of male population that is considered normal weight from 1988-2018 for age adjusted population
 query3 = 'Select Estimate From health WHERE (STUB_LABEL_NUM = 2.1 AND UNIT = "Percent of population, age-adjusted" AND PANEL_NUM = 1)'
 result_df3 = pd.read_sql(query3, conn)
-print((result_df3.sum()/result_df3.count()))
+print(result_df3.mean())
 
 #Returns all data where Stub_label = Male: Not Hispanic or Latino: White only
 query4 = 'Select * From health WHERE STUB_LABEL = "Male: Not Hispanic or Latino: White only"'
